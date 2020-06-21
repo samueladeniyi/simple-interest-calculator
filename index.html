@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <title>Simple Interest Calculator</title>
+
+    <script>
+      function calculate() {
+        p = document.getElementById("p").value;
+        n = document.getElementById("n").value;
+        // r = document.getElementById("r").value;
+        r = 6;
+        result = document.getElementById("result");
+        convert_n = n / 365;
+        //convert_r = 6/365;
+        result.innerHTML =
+          "You will get an interest of " +
+          "₦" +
+          ((p * convert_n * 6) / 100).toFixed(4) +
+          " (inclusive of VAT)" +
+          " at " +
+          r +
+          "%" +
+          " per annum";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div
+        class="wrapper"
+        style="
+          border: 1px solid blue;
+          margin-top: 2px;
+          border-radius: 25px;
+          background-image: linear-gradient(to right, #42f593, #42cbf5);
+        "
+      >
+        <h1 style="color: blue; text-align: center;">SafeLock by Piggybank</h1>
+        <p style="color: blue; text-align: center; font-size: 1.5rem;">
+          please respond accordingly <br /><br />
+
+          I want to invest ₦<input
+            id="p"
+            type="number"
+            placeholder="for example 100000"
+          />
+          <br /><br />
+
+          for
+          <input
+            id="n"
+            type="number"
+            placeholder="for example 30"
+          />days<br /><br />
+
+          <button type="button" class="btn btn-primary" onclick="calculate()">
+            How much will i get in return?
+          </button>
+        </p>
+
+        <p id="result" style="font-size: 30px;"></p>
+      </div>
+    </div>
+  </body>
+</html>
